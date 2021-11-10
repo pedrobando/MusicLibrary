@@ -32,3 +32,9 @@ app.put('/api/music/:id', (req, res) => {
     return res.send(updatedMusic);
 })
 
+app.delete('/api/music/:id', (req, res) => {
+    const id = req.params.id;
+    const deletedMusic = musicContext.deleteSong(id);
+    return res.send(deletedMusic);
+})
+
