@@ -1,12 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const musicContext = require('./repository/music-repository');
 const app = express();
 const { validateSong } = require('./middleware/music-validation');
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.listen(3001, function(){
-    console.log("Server started. Listening on port 3000.");
+    console.log("Server started. Listening on port 3001.");
 });
 
 app.get('/api/music', (req, res) => {
